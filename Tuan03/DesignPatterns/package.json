@@ -1,0 +1,17 @@
+{
+  "name": "design-patterns-practice",
+  "version": "1.0.0",
+  "description": "Thực hành Design Patterns - Mai Thành Hải Quân - MSSV: 22653671",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "composite": "node src/composite/index.js",
+    "observer": "node src/observer/index.js",
+    "adapter": "node src/adapter/index.js",
+    "library": "node src/library-system/index.js",
+    "all": "node index.js"
+  },
+  "keywords": ["design-patterns", "composite", "observer", "adapter", "singleton", "factory", "strategy", "decorator"],
+  "author": "Mai Thành Hải Quân - 22653671",
+  "license": "ISC"
+}
