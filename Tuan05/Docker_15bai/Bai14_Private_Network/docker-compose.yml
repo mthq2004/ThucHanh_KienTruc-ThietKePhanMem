@@ -1,0 +1,19 @@
+services:
+  service-a:
+    image: alpine:3.20
+    container_name: bai14-service-a
+    command: ["sh", "-c", "while true; do sleep 60; done"]
+    networks:
+      - private_net
+
+  service-b:
+    image: alpine:3.20
+    container_name: bai14-service-b
+    command: ["sh", "-c", "while true; do sleep 60; done"]
+    networks:
+      - private_net
+
+networks:
+  private_net:
+    driver: bridge
+    internal: true

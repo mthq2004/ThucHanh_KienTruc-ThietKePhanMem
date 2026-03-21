@@ -1,0 +1,14 @@
+{
+  "name": "ofd-microservice-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run start:all",
+    "start:all": "concurrently \"node services/restaurant-service.js\" \"node services/order-service.js\" \"node services/user-service.js\" \"node services/api-gateway.js\""
+  },
+  "dependencies": {
+    "concurrently": "^9.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  }
+}
