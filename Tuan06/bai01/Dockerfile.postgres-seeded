@@ -1,0 +1,4 @@
+FROM postgres:16-alpine
+
+# The script is executed only on first database initialization.
+COPY seed.sql /docker-entrypoint-initdb.d/01-seed.sql

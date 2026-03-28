@@ -1,0 +1,25 @@
+# Stage 1: install production dependencies
+FROM node:20-alpine AS deps
+WORKDIR /app
+COPY app/package.json ./package.json
+RUN npm install --omit=dev
+
+# Stage 2: install test dependencies
+FROM node:20-alpine AS test-deps
+WORKDIR /app
+COPY app/package.json ./package.json
+RUN npm install
+
+# Stage 3: run tests
+FROM test-deps AS test
+WORKDIR /app
+COPY app/. ./
+RUN npm test
+
+# Stage 4: runtime image
+FROM node:20-alpine AS runtime
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY app/server.js ./server.js
+EXPOSE 8080
+CMD ["node", "server.js"]

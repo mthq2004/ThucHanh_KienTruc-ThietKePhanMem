@@ -1,0 +1,14 @@
+{
+  "name": "bai01-image-opt-node",
+  "version": "1.0.0",
+  "description": "Exercise bai01 - image optimization with Node.js",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

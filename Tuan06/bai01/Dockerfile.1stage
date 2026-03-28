@@ -1,0 +1,9 @@
+# One-stage image: easiest but usually bigger and less secure
+FROM node:20-alpine
+WORKDIR /app
+COPY app/package.json ./package.json
+RUN npm install
+COPY app/. ./
+RUN npm test
+EXPOSE 8080
+CMD ["node", "server.js"]
