@@ -73,7 +73,7 @@ src/main/resources/
 
 Truyền tải sự kiện giữa các dịch vụ qua RabbitMQ.
 
-```java
+#java
 ProductEvent event = new ProductEvent(
     1L,                    // productId
     "Laptop Dell",         // productName
@@ -83,7 +83,7 @@ ProductEvent event = new ProductEvent(
     "CREATE",              // eventType
     "write-services"       // source
 );
-```
+
 
 ### 2. **Write-Side Logic (ProductWriteService)**
 
